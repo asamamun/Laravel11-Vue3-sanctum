@@ -2,6 +2,7 @@ import { createWebHistory, createRouter } from 'vue-router'
 
 
 /* Guest Component */
+const Home = () => import('@/components/Home.vue')
 const Login = () => import('@/components/Login.vue')
 const Register = () => import('@/components/Register.vue')
 /* Guest Component */
@@ -18,6 +19,17 @@ const Allusers = () => import('@/components/Allusers.vue')
 
 
 const routes = [
+    {
+        name: "home",
+        // path: import.meta.env.BASE_URL + "/login",
+        // path: "/ROUND57/VUE/laravel-vue3/public/login",
+        path: import.meta.env.VITE_APP_ROOT + "/",
+        component: Home,
+        meta: {
+            middleware: "guest",
+            title: `Home`
+        }
+    },
     {
         name: "login",
         // path: import.meta.env.BASE_URL + "/login",

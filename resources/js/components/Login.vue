@@ -1,4 +1,5 @@
 <template>
+    <Navbar/>
     <div class="container h-100">
         <div class="row h-100 align-items-center">
             <div class="col-12 col-md-6 offset-md-3">
@@ -40,7 +41,11 @@
 
 <script>
 import router from '@/router'
+import Navbar from '@/components/Navbar.vue'
 export default {
+    components:{
+        Navbar
+    },
     name:"login",
     data(){
         return {
