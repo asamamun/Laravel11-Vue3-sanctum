@@ -1,23 +1,16 @@
 <template>
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="card shadow-sm">
-                    <div class="card-header">
-                        <h3>Dashboard</h3>
-                    </div>
-                    <div class="card-body">
-                        <p class="mb-0">You are logged in as <b>{{ user?.data?.name }}</b></p>
-                        <p class="mb-0">You Detail is below<br/> <b>{{ userData }}</b></p>
-                    </div>
-                </div>
-            </div>
+    <AdminLayout>
+        <div class="container">
+            <h3>Admin Dashboard testtesttest</h3>
+            <p class="mb-0">You are logged in as <b>{{ user?.data?.name }}</b></p>
+            <p class="mb-0">You Detail is below<br/> <b>{{ userData }}</b></p>
         </div>
-    </div>
+    </AdminLayout>
 </template>
 
 <script>
 import router from '@/router'
+import AdminLayout from './layouts/Admin.vue';
 export default {
     name:"dashboard",
     data(){

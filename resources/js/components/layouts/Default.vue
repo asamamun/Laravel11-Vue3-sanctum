@@ -2,7 +2,7 @@
     <div>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="https://asamamun.wordpress.com/laravel-11-with-sanctum/" target="_blank">Vue3 Front</a>
+                <a class="navbar-brand" :href="root" target="_blank">Vue3 Admin Front</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -41,7 +41,8 @@ export default {
     name:"default-layout",
     data(){
         return {
-            user:[]
+            user:[],
+            root: import.meta.env.VITE_APP_URL
         }
     },
     mounted() {

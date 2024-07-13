@@ -1,18 +1,6 @@
 <template>
+    <AdminLayout>
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="card shadow-sm">
-                    <div class="card-header">
-                        <h3>All Users</h3>
-                    </div>
-                    <div class="card-body">
-                        <p class="mb-0">You are logged in as <b>{{ user?.data?.name }}</b></p>
-                        <p class="mb-0">You Detail is below<br/> <b>{{ userData }}</b></p>
-                    </div>
-                </div>
-            </div>
-        </div>
         <hr>
         <table v-if="user.data.role == 'admin'" class="table table-striped table-hover">
             <thead>
@@ -41,10 +29,12 @@
             </tbody>
         </table>
     </div>
+</AdminLayout>
 </template>
 
 <script>
 import router from '@/router'
+import AdminLayout from './layouts/Admin.vue';
 export default {
     name:"allusers",
     data() {
