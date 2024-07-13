@@ -8,8 +8,6 @@ import './bootstrap';
 import '../sass/app.scss'
 import { createApp } from 'vue';
 
-
-
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
  * registering components with the application instance so they are ready
@@ -18,8 +16,8 @@ import { createApp } from 'vue';
 
 const app = createApp({});
 
-import ExampleComponent from './components/ExampleComponent.vue';
-app.component('example-component', ExampleComponent);
+// import ExampleComponent from './components/ExampleComponent.vue';
+// app.component('example-component', ExampleComponent);
 
 import Router from '@/router'
 app.use(Router)

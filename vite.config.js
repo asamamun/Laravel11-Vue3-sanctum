@@ -21,6 +21,7 @@ export default defineConfig({
         }),
         
     ],
+    base: '/Laravel11-Vue3-sanctum/public/build/',
     define: {
         'process.env': {},
       },

@@ -52,7 +52,8 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', '/Laravel11-Vue3-sanctum/public'),
+    'asset_url' => env('ASSET_URL', '/Laravel11-Vue3-sanctum/public'),
 
     /*
     |--------------------------------------------------------------------------

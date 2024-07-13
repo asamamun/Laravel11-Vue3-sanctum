@@ -19,6 +19,7 @@
                             <li class="nav-item">
                                 <router-link :to="{name:'register'}" class="nav-link">Register</router-link>
                             </li>
+                            
                             <li class="nav-item">
                                 <router-link :to="{name:'dashboard'}" class="nav-link">Dashboard</router-link>
                             </li>
@@ -32,7 +33,7 @@
 </template>
 <script>
 export default {
-    
+    name:'navbar',    
 }
 </script>
 <style lang="">
