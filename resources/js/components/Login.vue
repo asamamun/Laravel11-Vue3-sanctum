@@ -43,7 +43,7 @@
 <script>
   import Layout from './layouts/Common.vue';
 import router from '@/router'
-
+import axiosInstance from '@/axios.js';
 export default {
     components:{
         Layout
@@ -64,7 +64,10 @@ export default {
             this.processing = true
             await axios.post(import.meta.env.VITE_APP_URL+'/api/login',this.auth).then(({data})=>{
                 // JSON.stringify() ：物件變 JSON
+                // console.log(data);
                 localStorage.setItem('user',JSON.stringify(data))
+                localStorage.setItem('sanctum_token', data.data.token);
+                axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${data.data.token}`;
                 router.push({name:'dashboard'})
             }).catch(({response})=>{
                 if(response.status===422){

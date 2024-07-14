@@ -15,6 +15,8 @@ const DahboardLayout = () => import('@/components/layouts/Default.vue')
 /* Authenticated Component */
 const Dashboard = () => import('@/components/Dashboard.vue')
 const Allusers = () => import('@/components/Allusers.vue')
+const Viewuser = () => import('@/components/Viewuser.vue')
+const Edituser = () => import('@/components/Edituser.vue')
 /* Authenticated Component */
 
 
@@ -76,6 +78,24 @@ const routes = [
                 component: Allusers,
                 meta: {
                     title: `All Users`
+                }
+            },
+            {
+                name: "viewuser",
+                // path: '/ROUND57/VUE/laravel-vue3/public/dashboard',
+                path: import.meta.env.VITE_APP_ROOT + "/viewuser/:id",
+                component: Viewuser,                
+                meta: {
+                    title: `View User`
+                }
+            },
+            {
+                name: "edituser",
+                // path: '/ROUND57/VUE/laravel-vue3/public/dashboard',
+                path: import.meta.env.VITE_APP_ROOT + "/edituser/:id",
+                component: Edituser,                
+                meta: {
+                    title: `Edit User`
                 }
             }
         ]

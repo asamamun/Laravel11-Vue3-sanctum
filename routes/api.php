@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\CarouselController;
+use App\Http\Controllers\UserController;
 use App\Models\User;
 
 Route::controller(AuthController::class)->group(function(){
@@ -18,6 +19,7 @@ Route::middleware(['auth:sanctum', 'admin'])->group(function () {
     Route::get('/allusers', function (Request $request) {
         return User::all();
     });
+    Route::resource('users', UserController::class);
     
 });
 // Other routes that don't require admin role

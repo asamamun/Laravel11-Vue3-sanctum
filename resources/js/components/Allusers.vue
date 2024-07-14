@@ -35,6 +35,7 @@
 <script>
 import router from '@/router'
 import AdminLayout from './layouts/Admin.vue';
+import axiosInstance from '@/axios.js';
 export default {
     name:"allusers",
     data() {
@@ -54,37 +55,30 @@ export default {
     },
     methods: {
         async deleteUser(id) {
-          /*   let token = this.user?.data.token;
-            const authHeader = {
-            'Authorization': 'Bearer ' + token,
-            'X-REQUEST-TYPE': 'axios'
+            if (!confirm('Are you sure you want to delete this user?')) {
+                return;
             }
-            let config = {headers:authHeader}
-            await axios.delete(import.meta.env.VITE_APP_URL+'/api/user/'+id,config).then(({data})=>{
+            
+            await axiosInstance.delete(import.meta.env.VITE_APP_URL+'/api/users/'+id).then((data)=>{
                 console.log(data);
-                router.push({name:'dashboard'})
-            }) */
+                // router.push({name:'allusers'})
+                this.getUsers()
+            })
         },
 
         async editUser(id) {
-           // router.push({name:'edituser',params:{id:id}})
+           router.push({name:'edituser',params:{id:id}})
         },
 
         async viewUser(id) {
-            //router.push({name:'viewuser',params:{id:id}})
+            router.push({name:'viewuser',params:{id:id}})
         },
 
         async getUser() {
             this.user = JSON.parse(localStorage.getItem('user'));
         },
         async getUsers() {
-            let token = this.user?.data.token;
-            const authHeader = {
-            'Authorization': 'Bearer ' + token,
-            'X-REQUEST-TYPE': 'axios'
-        }
-        let config = {headers:authHeader}
-            await axios.get(import.meta.env.VITE_APP_URL+'/api/allusers',config).then(({data})=>{
+            await axiosInstance.get(import.meta.env.VITE_APP_URL+'/api/allusers').then(({data})=>{
                 console.log(data);
                 this.users = data
             })
